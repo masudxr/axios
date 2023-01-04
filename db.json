@@ -1,0 +1,31 @@
+{
+    "posts": [{
+        "id": 1,
+        "name": "Masud",
+        "email": "masud@mail.com",
+        "adderss": "South street"
+    }, {
+        "id": 2,
+        "name": "John",
+        "email": "john@mail.com",
+        "adderss": "North street"
+    }, {
+        "id": 3,
+        "name": "Robert",
+        "email": "robert@mail.com",
+        "adderss": "East street"
+    }, {
+        "id": 4,
+        "name": "Shihab",
+        "email": "shihab@mail.com",
+        "adderss": "West street"
+    }],
+    "comments": [{
+        "id": 1,
+        "body": "some comment",
+        "postId": 1
+    }],
+    "profile": {
+        "name": "Masud Rana"
+    }
+}

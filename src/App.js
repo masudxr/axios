@@ -1,22 +1,9 @@
-import { useState } from "react";
-import axios from 'axios';
+import FetchData from './Components/GetData';
 
-function App() {
-    const [data, setData] = useState("");
-    const GetData = () =>{
-      axios.get("http://api.quotable.io/random")
-      .then(res => {
-        console.log(res.data.content);
-      setData(res.data.content);
-      }).catch(err => {
-        console.log(err);
-      });
-    };
+function App(){
     return(
-        <div>
-        <button onClick={GetData}>Get Data</button>
-        { <p>{data}</p> }
-        </div>
-     );
-}
+        <FetchData />
+    );
+
+};
 export default App;
