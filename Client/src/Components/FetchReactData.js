@@ -1,7 +1,7 @@
 // import FetchData from './Components/GetData';
 import React, { useEffect, useState } from 'react';
 
-function App() {
+function FetchReactData() {
     const [backenData, setBackenData] = useState([{}]);
 
     useEffect(() => {
@@ -33,4 +33,4 @@ function App() {
     );
 
 };
-export default App;
+export default FetchReactData;

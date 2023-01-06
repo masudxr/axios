@@ -2,23 +2,23 @@ import express from 'express'
 
 const app = express()
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.header("Access-Control-Allow-Headers", "x-access-token, Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+//     res.header("Access-Control-Allow-Headers", "x-access-token, Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+// });
 
-// app.use(express.json());
+app.use(express.json());
 
-// const courses = [
-//     {id: 1, name: 'Masud'},
-//     {id: 2, name: 'Shihab'},
-//     {id: 3, name: 'Rana'},
-//     {id: 4, name: 'Methu'},
-//     {id: 5, name: 'Rasel'},
-//     {id: 6, name: 'Zilani'},
-// ]
+const courses = [
+    {id: 1, name: 'Masud'},
+    {id: 2, name: 'Shihab'},
+    {id: 3, name: 'Rana'},
+    {id: 4, name: 'Methu'},
+    {id: 5, name: 'Rasel'},
+    {id: 6, name: 'Zilani'},
+]
 
 // app.get('/',(req, res) => {
 //   res.send('SetUp React JS and Express JS')
@@ -28,9 +28,9 @@ app.get('/api',(req, res) => {
     res.json({"users": ["userOne", "userTwo", "userTHree", "userFour"] })
 });
   
-// app.get('/api/courses',(req, res) => {
-//     res.json(courses)
-// });
+app.get('/api/courses',(req, res) => {
+    res.send(courses)
+});
 
 // app.get('/api/courses/:id',(req, res) => {
 //     let course = courses.find(c => c.id === parseInt(req.params.id))

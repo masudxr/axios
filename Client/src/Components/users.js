@@ -5,19 +5,20 @@ function Users(){
     const [users, setUsers] = useState([]);
 
     useEffect(() =>{
-        axios.get("/api").then(res =>{
+        axios.get("http://localhost:5050/api/courses").then(res =>{
             if(res.ok){
-                console.log('response', res);
+                console.log('response', res.json());
                 return res.json();
             }        
-        }).then(data => setUsers(data)).catch(err => {
+        }).then(data => setUsers(data))
+        .catch(err => {
             console.log(err);
         });
     });
 
     return (
         <div>
-            {(typeof users.users === 'undefined') ? (
+            {/* {(typeof users.users === 'undefined') ? (
                 <p>Loading....</p>
             ) : (
                 users.users.map((user, i) => {
@@ -26,8 +27,8 @@ function Users(){
                     );
                 })
 
-            )}
-            {/* {users.map(user => <li>{user}</li>)} */}
+            )} */}
+            {users.map(user => <li>{user}</li>)}
         </div>
     );
 }
